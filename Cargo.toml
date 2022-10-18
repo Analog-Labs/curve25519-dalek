@@ -5,7 +5,7 @@ name = "curve25519-dalek"
 # - update html_root_url
 # - update README if required by semver
 # - if README was updated, also update module documentation in src/lib.rs
-version = "3.2.0"
+version = "3.2.1"
 authors = ["Isis Lovecruft <isis@patternsinthevoid.net>",
            "Henry de Valence <hdevalence@hdevalence.ca>"]
 readme = "README.md"
@@ -50,8 +50,9 @@ serde = { version = "1.0", default-features = false, optional = true, features =
 # The original packed_simd package was orphaned, see
 # https://github.com/rust-lang/packed_simd/issues/303#issuecomment-701361161
 packed_simd = { version = "0.3.4", package = "packed_simd_2", features = ["into_bits"], optional = true }
-zeroize = { version = ">=1, <1.4", default-features = false }
+zeroize = { version = "1", default-features = false }
 fiat-crypto = { version = "0.1.6", optional = true}
+borsh = { version ="0.9", default-features = false }
 
 [features]
 nightly = ["subtle/nightly"]
@@ -72,3 +73,4 @@ simd_backend = ["nightly", "u64_backend", "packed_simd"]
 # DEPRECATED: this is now an alias for `simd_backend` and may be removed
 # in some future release.
 avx2_backend = ["simd_backend"]
+borch = []
